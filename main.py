@@ -1,7 +1,7 @@
 from src.lexer import *
 from src.converter import *
 
-string = "cos(4)+sin(7*4)"
+string = "-cos(4)+sin(7*4)"
 # string = "1+x"
 
 
