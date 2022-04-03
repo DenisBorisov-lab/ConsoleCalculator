@@ -90,6 +90,8 @@ def secant_method(f, x1, x2):
                 x1 = new_x
             else:
                 x2 = new_x
+    if new_x == -0.0:
+        new_x = 0.0
     return new_x
 
 

@@ -3,7 +3,7 @@ from src.converter import *
 from src.lexer import *
 
 # Ваедите пример
-string = "2^3"
+string = "x*(2/3)"
 
 instance = is_valid(string)
 
