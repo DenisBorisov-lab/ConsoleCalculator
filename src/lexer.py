@@ -23,7 +23,7 @@ def is_valid(instance: str):
                 gap_counter += 1
                 array_instance.append(symbol)
             elif symbol == "-":
-                array_instance.append(symbol)
+                array_instance.append("u")
             elif symbol in string.ascii_lowercase and symbol != "x":
                 current_state = F
                 component += symbol

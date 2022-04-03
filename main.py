@@ -1,23 +1,31 @@
-from src.lexer import *
+from src.calculator import *
 from src.converter import *
+from src.lexer import *
 
-string = "-cos(4)+sin(7*4)"
-# string = "1+x"
-
+# Ваедите пример
+string = "2^3"
 
 instance = is_valid(string)
 
-print(instance)
-if len(is_valid(string)) == 0:
+if len(instance) == 0:
     print("Некорректный ввод")
 else:
     if "x" in instance:
-        # выполнение на 4
-        pass
+        print("Укажите начало границы отрезка:")
+        x1 = int(input())
+        print("Введите конец отрезка: ")
+        x2 = int(input())
+        print("Вы хотите найти корни уравнения на данном отрезке? [Y/n]: ")
+        answer = input()
+        if answer == "Y":
+            print("Корень уравнения:", secant_method(Arithmetics(to_postfix(instance)).solve, x1, x2))
+        print("Вы хотите рассчитать интеграл на заданном отрезке? [Y/n]: ")
+        answer = input()
+        if answer == "Y":
+            print("Результат вычисления:", integral(Arithmetics(to_postfix(instance)).solve, x1, x2))
+
     else:
-        print(to_postfix(instance))
         if len(to_postfix(instance)) == 0:
-            print("Некоррекктный ввод")
+            print("Некорректный ввод")
         else:
-            #сам калькулятор
-            pass
+            print("Результат примера:", Arithmetics(to_postfix(instance)).solve(0))

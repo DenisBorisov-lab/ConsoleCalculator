@@ -1,10 +1,14 @@
 def to_postfix(array: list):
     queue = []
     stack = []
-    values = {"*": 3, "/": 3, "+": 2, "-": 2, "(": 1, "^": 4, "cos": 4, "sin": 5, "tg": 4, "ctg": 4, "ln": 4, "exp": 4}
+    values = {"*": 3, "/": 3, "+": 2, "-": 2, "(": 1, "^": 4, "cos": 4, "sin": 5, "tg": 4, "ctg": 4, "ln": 4, "exp": 4,
+              "u": 2}
     for symbol in array:
         try:
-            queue.append(float(symbol))
+            if symbol == "x":
+                queue.append(symbol)
+            else:
+                queue.append(float(symbol))
         except:
             try:
                 if symbol == "(":
